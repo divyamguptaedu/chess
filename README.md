@@ -7,6 +7,5 @@
    
 <br /> 
 
-This repository is my version of a chess board game. <br /> 
 Access the assignment - 
 [Assignment-1.0-CS-242-FA14-Illinois-Wiki.pdf](https://github.com/divyamguptaedu/chess/files/6973058/Assignment-1.0-CS-242-FA14-Illinois-Wiki.pdf)
