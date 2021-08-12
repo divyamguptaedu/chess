@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 class Color {
 
     String color;
@@ -5,8 +7,9 @@ class Color {
     Color(String color) {
         if (color == "White" || color == "Black") {
             this.color = color;
+        } else {
+            throw new NoSuchElementException("Color can only be 'White' or 'Black'");
         }
-        this.color = "";
     }
 
     public String getColor() {
