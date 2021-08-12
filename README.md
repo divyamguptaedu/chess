@@ -1,4 +1,4 @@
-<img align="left" width="300" alt="main_photo" src="https://user-images.githubusercontent.com/30758479/128587549-9033ee00-62ab-4eba-b894-8c0fd2eb9d28.png">
+<img align="left" width="265" alt="main_photo" src="https://user-images.githubusercontent.com/30758479/128587549-9033ee00-62ab-4eba-b894-8c0fd2eb9d28.png">
 
 #### Hey, I'm Divyam! 
    An aspiring tech entrepreneur and computer science undergraduate at Georgia Tech looking to expand my knowledge and revolutionize the world through new           initiatives inspired by past and present learning experiences.  <br />  <br /> 
