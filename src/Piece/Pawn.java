@@ -1,20 +1,22 @@
+package Piece;
+
 import java.util.List;
 import java.util.Set;
 
-class Rook extends Piece {
+public class Pawn extends Piece {
     Color color;
 
-    Rook(String color) {
+    public Pawn(String color) {
         this.color = new Color(color);
     }
 
     @Override
-    List<Set<Integer>> findMoves(Grid grid) {
+    List<Set<Integer>> findMoves() {
         return null;
     }
 
     @Override
     public String toString() {
-        return "R";
+        return "P";
     }
 }

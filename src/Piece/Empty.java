@@ -1,12 +1,14 @@
+package Piece;
+
 import java.util.List;
 import java.util.Set;
 
-class Empty extends Piece {
+public class Empty extends Piece {
 
-    Empty() { }
+    public Empty() { }
 
     @Override
-    List<Set<Integer>> findMoves(Grid grid) {
+    List<Set<Integer>> findMoves() {
         return null;
     }
 

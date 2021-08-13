@@ -1,3 +1,5 @@
+package Piece;
+
 import java.util.NoSuchElementException;
 
 class Color {
@@ -8,7 +10,7 @@ class Color {
         if (color == "White" || color == "Black") {
             this.color = color;
         } else {
-            throw new NoSuchElementException("Color can only be 'White' or 'Black'");
+            throw new NoSuchElementException("Piece.Color can only be 'White' or 'Black'");
         }
     }
 

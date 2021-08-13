@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9a4d6b8f-5cc9-4c7d-af0a-4db103059bc6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Empty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Rook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +61,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1wabaK6cmQU6F7UNtUfjZtlI4RN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,6 +77,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.20323326" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -56,12 +85,19 @@
       <recent name="Piece" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Grid" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="Grid" />
+      <module name="chess" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="chess" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -80,6 +116,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,12 +135,23 @@
       <workItem from="1628769911033" duration="578000" />
       <workItem from="1628770557092" duration="156000" />
       <workItem from="1628770719854" duration="647000" />
-      <workItem from="1628771391532" duration="60000" />
+      <workItem from="1628771391532" duration="3689000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="208" y="25" width="1024" height="785" key="#Project_Structure" timestamp="1628771173872">
@@ -110,6 +162,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="2" width="1071" height="898" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1628771124923" />
+    <state x="456" y="223" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1628834624551">
+      <screen x="0" y="25" width="1440" height="785" />
+    </state>
+    <state x="456" y="223" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.785@0.25.1440.785" timestamp="1628834624551" />
     <state x="386" y="160" key="#com.intellij.ide.util.MemberChooser" timestamp="1628747221060">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -126,26 +182,30 @@
       <screen x="0" y="25" width="1440" height="785" />
     </state>
     <state x="458" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1440.785@0.25.1440.785" timestamp="1628744771991" />
-    <state width="1398" height="257" key="GridCell.Tab.0.bottom" timestamp="1628770535593">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="467" y="276" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1628827662557">
+      <screen x="0" y="25" width="1440" height="785" />
+    </state>
+    <state x="467" y="276" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1440.785@0.25.1440.785" timestamp="1628827662557" />
+    <state width="1398" height="401" key="GridCell.Tab.0.bottom" timestamp="1628835380316">
+      <screen x="0" y="25" width="1440" height="785" />
     </state>
     <state width="1398" height="257" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1628770535593" />
-    <state width="1398" height="257" key="GridCell.Tab.0.bottom/0.25.1440.785@0.25.1440.785" timestamp="1628744211823" />
-    <state width="1398" height="257" key="GridCell.Tab.0.center" timestamp="1628770535591">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="401" key="GridCell.Tab.0.bottom/0.25.1440.785@0.25.1440.785" timestamp="1628835380316" />
+    <state width="1398" height="401" key="GridCell.Tab.0.center" timestamp="1628835380315">
+      <screen x="0" y="25" width="1440" height="785" />
     </state>
     <state width="1398" height="257" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1628770535591" />
-    <state width="1398" height="257" key="GridCell.Tab.0.center/0.25.1440.785@0.25.1440.785" timestamp="1628744211822" />
-    <state width="1398" height="257" key="GridCell.Tab.0.left" timestamp="1628770535590">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="401" key="GridCell.Tab.0.center/0.25.1440.785@0.25.1440.785" timestamp="1628835380315" />
+    <state width="1398" height="401" key="GridCell.Tab.0.left" timestamp="1628835380315">
+      <screen x="0" y="25" width="1440" height="785" />
     </state>
     <state width="1398" height="257" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1628770535590" />
-    <state width="1398" height="257" key="GridCell.Tab.0.left/0.25.1440.785@0.25.1440.785" timestamp="1628744211819" />
-    <state width="1398" height="257" key="GridCell.Tab.0.right" timestamp="1628770535592">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="401" key="GridCell.Tab.0.left/0.25.1440.785@0.25.1440.785" timestamp="1628835380315" />
+    <state width="1398" height="401" key="GridCell.Tab.0.right" timestamp="1628835380315">
+      <screen x="0" y="25" width="1440" height="785" />
     </state>
     <state width="1398" height="257" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628770535592" />
-    <state width="1398" height="257" key="GridCell.Tab.0.right/0.25.1440.785@0.25.1440.785" timestamp="1628744211822" />
+    <state width="1398" height="401" key="GridCell.Tab.0.right/0.25.1440.785@0.25.1440.785" timestamp="1628835380315" />
     <state x="229" y="25" width="1024" height="785" key="SettingsEditor" timestamp="1628771305312">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

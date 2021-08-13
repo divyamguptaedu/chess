@@ -1,7 +1,19 @@
-class Grid {
+import Piece.Bishop;
+import Piece.Empty;
+import Piece.King;
+import Piece.Knight;
+import Piece.Pawn;
+import Piece.Piece;
+import Piece.Queen;
+import Piece.Rook;
+
+import java.util.Set;
+
+public class Grid {
     Piece[][] grid;
     Grid() {
         grid = new Piece[8][8];
+        defaultGrid();
     }
 
     void defaultGrid() {
@@ -40,22 +52,23 @@ class Grid {
 
     void displayGrid() {
         System.out.println();
-        System.out.println("---------------------------------");
+        System.out.println("-----------------------------------------");
+        System.out.println("   [| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |]   ");
+        System.out.println("-----------------------------------------");
+        int legend = 0;
         for (Piece[] row : grid) {
-            System.out.print("| ");
+            System.out.printf(" " + legend + " [|", legend);
             for (Piece index : row) {
-                System.out.print(index);
-                System.out.print(" | ");
+                System.out.print(" " + index);
+                System.out.print(" |");
             }
+            System.out.print("] " + legend);
+            legend++;
             System.out.println();
         }
-        System.out.println("---------------------------------");
+        System.out.println("-----------------------------------------");
+        System.out.println("   [| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |]   ");
+        System.out.println("-----------------------------------------");
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-        Grid grid = new Grid();
-        grid.defaultGrid();
-        grid.displayGrid();
     }
 }
