@@ -11,7 +11,16 @@ public class Bishop extends Piece {
         this.color = new Color(color);
     }
 
-    public List<int[]> findMovesUpRight(int i, int j) {
+    public List<List<int[]>> findMoves(int i, int j) {
+        List<List<int[]>> result = new ArrayList<>();
+        result.add(this.findMovesUpRight(i, j));
+        result.add(this.findMovesUpLeft(i, j));
+        result.add(this.findMovesDownRight(i, j));
+        result.add(this.findMovesDownLeft(i, j));
+        return result;
+    }
+
+    private List<int[]> findMovesUpRight(int i, int j) {
         List<int[]> result = new ArrayList<>();
         int b = 1;
         for (int a = i - 1; a >= 0 ; a--) {
@@ -21,7 +30,7 @@ public class Bishop extends Piece {
         return result;
     }
 
-    public List<int[]> findMovesUpLeft(int i, int j) {
+    private List<int[]> findMovesUpLeft(int i, int j) {
         List<int[]> result = new ArrayList<>();
         int b = 1;
         for (int a = i - 1; a >= 0 ; a--) {
@@ -31,7 +40,7 @@ public class Bishop extends Piece {
         return result;
     }
 
-    public List<int[]> findMovesDownRight(int i, int j) {
+    private List<int[]> findMovesDownRight(int i, int j) {
         List<int[]> result = new ArrayList<>();
         int b = 1;
         for (int a = i + 1; a < 8 ; a++) {
@@ -41,7 +50,7 @@ public class Bishop extends Piece {
         return result;
     }
 
-    public List<int[]> findMovesDownLeft(int i, int j) {
+    private List<int[]> findMovesDownLeft(int i, int j) {
         List<int[]> result = new ArrayList<>();
         int b = 1;
         for (int a = i + 1; a < 8 ; a++) {

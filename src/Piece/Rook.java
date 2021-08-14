@@ -11,7 +11,16 @@ public class Rook extends Piece {
         this.color = new Color(color);
     }
 
-    public List<int[]> findMovesUp(int i, int j) {
+    public List<List<int[]>> findMoves(int i, int j) {
+        List<List<int[]>> result = new ArrayList<>();
+        result.add(this.findMovesUp(i, j));
+        result.add(this.findMovesDown(i, j));
+        result.add(this.findMovesRight(i, j));
+        result.add(this.findMovesLeft(i, j));
+        return result;
+    }
+
+    private List<int[]> findMovesUp(int i, int j) {
         List<int[]> result = new ArrayList<>();
         for (int a = i - 1; a >= 0 ; a--) {
             result.add(new int[]{a, j});
@@ -19,7 +28,7 @@ public class Rook extends Piece {
         return result;
     }
 
-    public List<int[]> findMovesDown(int i, int j) {
+    private List<int[]> findMovesDown(int i, int j) {
         List<int[]> result = new ArrayList<>();
         for (int a = i + 1; a < 8 ; a++) {
             result.add(new int[]{a, j});
@@ -27,7 +36,7 @@ public class Rook extends Piece {
         return result;
     }
 
-    public List<int[]> findMovesRight(int i, int j) {
+    private List<int[]> findMovesRight(int i, int j) {
         List<int[]> result = new ArrayList<>();
         for (int a = j + 1; a < 8 ; a++) {
             result.add(new int[]{i, a});
@@ -35,7 +44,7 @@ public class Rook extends Piece {
         return result;
     }
 
-    public List<int[]> findMovesLeft(int i, int j) {
+    private List<int[]> findMovesLeft(int i, int j) {
         List<int[]> result = new ArrayList<>();
         for (int a = j - 1; a >= 0 ; a--) {
             result.add(new int[]{i, a});
