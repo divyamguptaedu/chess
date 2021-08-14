@@ -1,4 +1,5 @@
 import Piece.Empty;
+import Piece.Pawn;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,5 +89,30 @@ public class GamePlay {
         }
         return result;
     }
-    
+
+    // for pawn moves;
+    private List<List<int[]>> filterPawnMoves(int i, int j, List<List<int[]>> input, Grid grid) {
+        String color = grid.grid[i][j].color.color;
+        if (((Pawn) grid.grid[i][j]).firstMoveDone == true) {
+            if (!(grid.grid[input.get(0).get(0)[0]][input.get(0).get(0)[1]] instanceof Empty)) {
+                input.get(0).remove(0);
+            }
+        }
+        if (((Pawn) grid.grid[i][j]).firstMoveDone == false) {
+            if (!(grid.grid[input.get(0).get(0)[0]][input.get(0).get(0)[1]] instanceof Empty)) {
+                input.get(0).remove(0);
+                input.get(0).remove(1);
+            } else {
+                if (!(grid.grid[input.get(0).get(0)[0]][input.get(0).get(0)[1]] instanceof Empty)) {
+                    input.get(0).remove(1);
+                }
+            }
+        }
+        for (int x = 0; i < input.get(1).size(); i++) {
+            if ((grid.grid[input.get(1).get(x)[0]][input.get(1).get(x)[1]] instanceof Empty) || (grid.grid[input.get(1).get(x)[0]][input.get(1).get(x)[1]].color.color == color)) {
+                input.get(1).remove(x);
+            }
+        }
+        return input;
+    }
 }

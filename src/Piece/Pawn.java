@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Set;
 
 public class Pawn extends Piece {
-    Color color;
-    Boolean firstMoveDone;
+    public Color color;
+    public Boolean firstMoveDone;
 
     public Pawn(String color) {
         this.color = new Color(color);
