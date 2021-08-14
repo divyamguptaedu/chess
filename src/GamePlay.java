@@ -1,5 +1,4 @@
-import Piece.Empty;
-import Piece.Pawn;
+import Piece.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,7 @@ public class GamePlay {
 
         Scanner scanner = new Scanner(System.in);
         int i = 0;
-        while (i < 3) {
+        while (i < 10) {
             i++;
             System.out.println("Which piece do you want to move?");
             System.out.println("Enter row index: ");
@@ -45,6 +44,24 @@ public class GamePlay {
                 System.out.println("That's an invalid position.");
                 continue;
             }
+            if (grid.grid[i1][j1] instanceof Pawn) {
+                if (!contains(i2, j2, filterPawnMoves(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
+                    System.out.println("That's an invalid move.");
+                    continue;
+                }
+            }
+            if (grid.grid[i1][j1] instanceof Bishop || grid.grid[i1][j1] instanceof Rook || grid.grid[i1][j1] instanceof Queen) {
+                if (!contains(i2, j2, limitTillEnemy(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
+                    System.out.println("That's an invalid move.");
+                    continue;
+                }
+            }
+            if (grid.grid[i1][j1] instanceof King || grid.grid[i1][j1] instanceof Knight) {
+                if (!contains(i2, j2, removeFriends(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
+                    System.out.println("That's an invalid move.");
+                    continue;
+                }
+            }
             if (!(grid.grid[i2][j2] instanceof Empty)) {
                 grid.grid[i2][j2] = new Empty();
             }
@@ -54,19 +71,19 @@ public class GamePlay {
     }
 
     // for king and knight moves;
-    private List<int[]> removeFriends(int i, int j, List<int[]> input, Grid grid) {
-        String color = grid.grid[i][j].color.color;
+    private static List<List<int[]>> removeFriends(int i, int j, List<List<int[]>> input, Grid grid) {
+        String color = grid.grid[i][j].getColor();
         for (int x = 0; i < input.size(); i++) {
-            if (grid.grid[input.get(x)[0]][input.get(x)[1]].color.color == color) {
-                input.remove(x);
+            if (grid.grid[input.get(0).get(x)[0]][input.get(0).get(x)[1]].getColor() == color) {
+                input.get(0).remove(x);
             }
         }
         return input;
     }
 
     // for bishop, rook, and queen moves;
-    private List<List<int[]>> limitTillEnemy(int i, int j, List<List<int[]>> input, Grid grid) {
-        String color = grid.grid[i][j].color.color;
+    private static List<List<int[]>> limitTillEnemy(int i, int j, List<List<int[]>> input, Grid grid) {
+        String color = grid.grid[i][j].getColor();
         List<List<int[]>> result = new ArrayList<>();
         List<int[]> temp;
         for (List<int[]> list : input) {
@@ -75,7 +92,7 @@ public class GamePlay {
                 if (grid.grid[list.get(x)[0]][list.get(x)[1]] instanceof Empty) {
                     temp.add(list.get(x));
                 } else {
-                    if (grid.grid[list.get(x)[0]][list.get(x)[1]].color.color == color) {
+                    if (grid.grid[list.get(x)[0]][list.get(x)[1]].getColor() == color) {
                         result.add(temp);
                         break;
                     } else {
@@ -91,8 +108,8 @@ public class GamePlay {
     }
 
     // for pawn moves;
-    private List<List<int[]>> filterPawnMoves(int i, int j, List<List<int[]>> input, Grid grid) {
-        String color = grid.grid[i][j].color.color;
+    private static List<List<int[]>> filterPawnMoves(int i, int j, List<List<int[]>> input, Grid grid) {
+        String color = grid.grid[i][j].getColor();
         if (((Pawn) grid.grid[i][j]).firstMoveDone == true) {
             if (!(grid.grid[input.get(0).get(0)[0]][input.get(0).get(0)[1]] instanceof Empty)) {
                 input.get(0).remove(0);
@@ -109,10 +126,21 @@ public class GamePlay {
             }
         }
         for (int x = 0; i < input.get(1).size(); i++) {
-            if ((grid.grid[input.get(1).get(x)[0]][input.get(1).get(x)[1]] instanceof Empty) || (grid.grid[input.get(1).get(x)[0]][input.get(1).get(x)[1]].color.color == color)) {
+            if ((grid.grid[input.get(1).get(x)[0]][input.get(1).get(x)[1]] instanceof Empty) || (grid.grid[input.get(1).get(x)[0]][input.get(1).get(x)[1]].getColor() == color)) {
                 input.get(1).remove(x);
             }
         }
         return input;
+    }
+
+    private static boolean contains(int i, int j, List<List<int[]>> input) {
+        for (List<int[]> list : input) {
+            for (int[] set : list) {
+                if (set[0] == i && set[1] == j) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

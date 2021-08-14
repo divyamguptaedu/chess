@@ -5,13 +5,11 @@ import java.util.List;
 import java.util.Set;
 
 public class Knight extends Piece {
-    Color color;
-
+    private Color color;
     public Knight(String color) {
         this.color = new Color(color);
     }
-
-    public List<int[]> findMoves(int i, int j) {
+    public List<List<int[]>> findMoves(int i, int j) {
         List<int[]> result = new ArrayList<>();
         result.add(new int[]{i - 2, j - 1});
         result.add(new int[]{i - 2, j + 1});
@@ -26,11 +24,17 @@ public class Knight extends Piece {
                 result.remove(k);
             }
         }
-        return result;
+        List<List<int[]>> finalResult = new ArrayList<>();
+        finalResult.add(result);
+        return finalResult;
     }
 
     @Override
     public String toString() {
         return "N";
+    }
+
+    public String getColor() {
+        return color.getColor();
     }
 }

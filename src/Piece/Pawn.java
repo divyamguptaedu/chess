@@ -2,10 +2,9 @@ package Piece;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class Pawn extends Piece {
-    public Color color;
+    private Color color;
     public Boolean firstMoveDone;
 
     public Pawn(String color) {
@@ -22,13 +21,13 @@ public class Pawn extends Piece {
 
     private List<int[]> findMovesAhead(int i, int j) {
         List<int[]> result = new ArrayList<>();
-        if (this.color.color == "White") {
+        if (this.color.getColor() == "White") {
             result.add(new int[]{i + 1, j});
             if (!this.firstMoveDone) {
                 result.add(new int[]{i + 2, j});
             }
         }
-        if (this.color.color == "Black") {
+        if (this.color.getColor() == "Black") {
             result.add(new int[]{i - 1, j});
             if (!this.firstMoveDone) {
                 result.add(new int[]{i - 2, j});
@@ -44,11 +43,11 @@ public class Pawn extends Piece {
 
     private List<int[]> findMovesToKill(int i, int j) {
         List<int[]> result = new ArrayList<>();
-        if (this.color.color == "White") {
+        if (this.color.getColor() == "White") {
             result.add(new int[]{i + 1, j - 1});
             result.add(new int[]{i + 1, j + 1});
         }
-        if (this.color.color == "Black") {
+        if (this.color.getColor() == "Black") {
             result.add(new int[]{i - 1, j - 1});
             result.add(new int[]{i - 1, j + 1});
         }
@@ -59,7 +58,9 @@ public class Pawn extends Piece {
         }
         return result;
     }
-
+    public String getColor() {
+        return color.getColor();
+    }
 
     @Override
     public String toString() {

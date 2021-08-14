@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Set;
 
 public class Rook extends Piece {
-    Color color;
+
+    private Color color;
 
     public Rook(String color) {
         this.color = new Color(color);
@@ -50,6 +51,10 @@ public class Rook extends Piece {
             result.add(new int[]{i, a});
         }
         return result;
+    }
+
+    public String getColor() {
+        return color.getColor();
     }
 
     @Override
