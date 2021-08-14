@@ -10,7 +10,6 @@ public class Pawn extends Piece {
         this.color = new Color(color);
     }
 
-    @Override
     List<int[]> findMoves(int i, int j) {
         return null;
     }

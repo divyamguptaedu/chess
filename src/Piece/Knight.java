@@ -11,7 +11,6 @@ public class Knight extends Piece {
         this.color = new Color(color);
     }
 
-    @Override
     public List<int[]> findMoves(int i, int j) {
         List<int[]> result = new ArrayList<>();
         result.add(new int[]{i - 2, j - 1});

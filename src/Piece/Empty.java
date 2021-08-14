@@ -7,7 +7,6 @@ public class Empty extends Piece {
 
     public Empty() { }
 
-    @Override
     List<int[]> findMoves(int i, int j) {
         return null;
     }
