@@ -22,15 +22,9 @@
     <list default="true" id="9a4d6b8f-5cc9-4c7d-af0a-4db103059bc6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Bishop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Empty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Piece/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/King.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Piece/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Knight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Piece/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Rook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +123,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Knight" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Piece.Knight" />
+      <module name="chess" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Piece.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Rook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Piece.Rook" />
       <module name="chess" />
@@ -158,6 +165,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GamePlay" />
+        <item itemvalue="Application.Knight" />
         <item itemvalue="Application.Bishop" />
         <item itemvalue="Application.Rook" />
         <item itemvalue="Application.King" />
@@ -177,7 +185,7 @@
       <workItem from="1628769911033" duration="578000" />
       <workItem from="1628770557092" duration="156000" />
       <workItem from="1628770719854" duration="647000" />
-      <workItem from="1628771391532" duration="25975000" />
+      <workItem from="1628771391532" duration="32006000" />
     </task>
     <servers />
   </component>
@@ -232,25 +240,25 @@
       <screen x="0" y="25" width="1440" height="785" />
     </state>
     <state x="467" y="276" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1440.785@0.25.1440.785" timestamp="1628827662557" />
-    <state width="1398" height="490" key="GridCell.Tab.0.bottom" timestamp="1628940718969">
+    <state width="1398" height="490" key="GridCell.Tab.0.bottom" timestamp="1628963129409">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1628940718969" />
+    <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1628963129409" />
     <state width="1398" height="401" key="GridCell.Tab.0.bottom/0.25.1440.785@0.25.1440.785" timestamp="1628869003843" />
-    <state width="1398" height="490" key="GridCell.Tab.0.center" timestamp="1628940718968">
+    <state width="1398" height="490" key="GridCell.Tab.0.center" timestamp="1628963129407">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1628940718968" />
+    <state width="1398" height="490" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1628963129407" />
     <state width="1398" height="401" key="GridCell.Tab.0.center/0.25.1440.785@0.25.1440.785" timestamp="1628869003842" />
-    <state width="1398" height="490" key="GridCell.Tab.0.left" timestamp="1628940718966">
+    <state width="1398" height="490" key="GridCell.Tab.0.left" timestamp="1628963129404">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1628940718966" />
+    <state width="1398" height="490" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1628963129404" />
     <state width="1398" height="401" key="GridCell.Tab.0.left/0.25.1440.785@0.25.1440.785" timestamp="1628869003839" />
-    <state width="1398" height="490" key="GridCell.Tab.0.right" timestamp="1628940718969">
+    <state width="1398" height="490" key="GridCell.Tab.0.right" timestamp="1628963129408">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628940718969" />
+    <state width="1398" height="490" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628963129408" />
     <state width="1398" height="401" key="GridCell.Tab.0.right/0.25.1440.785@0.25.1440.785" timestamp="1628869003842" />
     <state x="229" y="25" width="1024" height="785" key="SettingsEditor" timestamp="1628869708381">
       <screen x="0" y="0" width="1440" height="900" />

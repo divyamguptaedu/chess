@@ -22,6 +22,7 @@ public class Knight extends Piece {
         for (int k = 0; k < result.size(); k++) {
             if (result.get(k)[0] < 0 || result.get(k)[0] > 7 || result.get(k)[1] < 0 || result.get(k)[1] > 7) {
                 result.remove(k);
+                k--;
             }
         }
         List<List<int[]>> finalResult = new ArrayList<>();
