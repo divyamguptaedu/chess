@@ -10,7 +10,9 @@ import Piece.Rook;
 import java.util.Set;
 
 public class Grid {
+
     Piece[][] grid;
+
     Grid() {
         grid = new Piece[8][8];
         defaultGrid();
@@ -77,4 +79,5 @@ public class Grid {
         grid[i1][j1] = grid[i2][j2];
         grid[i2][j2] = temp;
     }
+
 }

@@ -8,10 +8,9 @@ public class Empty extends Piece {
     public Empty() { }
 
     @Override
-    List<Set<Integer>> findMoves() {
+    List<int[]> findMoves(int i, int j) {
         return null;
     }
-
     @Override
     public String toString() {
         return "_";

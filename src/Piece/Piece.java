@@ -5,7 +5,7 @@ import java.util.Set;
 
 public abstract class Piece {
     Color color;
-    abstract List<Set<Integer>> findMoves();
+    abstract List<int[]> findMoves(int i, int j);
     @Override
     public abstract String toString();
 }

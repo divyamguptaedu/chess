@@ -11,7 +11,7 @@ public class Bishop extends Piece {
     }
 
     @Override
-    List<Set<Integer>> findMoves() {
+    List<int[]> findMoves(int i, int j) {
         return null;
     }
 
