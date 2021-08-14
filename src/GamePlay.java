@@ -1,5 +1,6 @@
 import Piece.Empty;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,7 +52,7 @@ public class GamePlay {
         }
     }
 
-
+    // for king and knight moves;
     private List<int[]> removeFriends(int i, int j, List<int[]> input, Grid grid) {
         String color = grid.grid[i][j].color.color;
         for (int x = 0; i < input.size(); i++) {
@@ -62,4 +63,30 @@ public class GamePlay {
         return input;
     }
 
+    // for bishop, rook, and queen moves;
+    private List<List<int[]>> limitTillEnemy(int i, int j, List<List<int[]>> input, Grid grid) {
+        String color = grid.grid[i][j].color.color;
+        List<List<int[]>> result = new ArrayList<>();
+        List<int[]> temp;
+        for (List<int[]> list : input) {
+            temp = new ArrayList<>();
+            for (int x = 0; x < list.size(); x++) {
+                if (grid.grid[list.get(x)[0]][list.get(x)[1]] instanceof Empty) {
+                    temp.add(list.get(x));
+                } else {
+                    if (grid.grid[list.get(x)[0]][list.get(x)[1]].color.color == color) {
+                        result.add(temp);
+                        break;
+                    } else {
+                        temp.add(list.get(x));
+                        result.add(temp);
+                        break;
+                    }
+                }
+                result.add(temp);
+            }
+        }
+        return result;
+    }
+    
 }
