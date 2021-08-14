@@ -29,7 +29,7 @@ public class Rook extends Piece {
 
     public List<int[]> findMovesRight(int i, int j) {
         List<int[]> result = new ArrayList<>();
-        for (int a = j; a < 8 ; a++) {
+        for (int a = j + 1; a < 8 ; a++) {
             result.add(new int[]{i, a});
         }
         return result;
@@ -37,7 +37,7 @@ public class Rook extends Piece {
 
     public List<int[]> findMovesLeft(int i, int j) {
         List<int[]> result = new ArrayList<>();
-        for (int a = j; a >= 0 ; a--) {
+        for (int a = j - 1; a >= 0 ; a--) {
             result.add(new int[]{i, a});
         }
         return result;

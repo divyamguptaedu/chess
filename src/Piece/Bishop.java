@@ -11,13 +11,42 @@ public class Bishop extends Piece {
         this.color = new Color(color);
     }
 
-    public List<int[]> findMoves(int i, int j) {
+    public List<int[]> findMovesUpRight(int i, int j) {
         List<int[]> result = new ArrayList<>();
-        for (int a = 0; a < 8; a++) {
-            if (a != i) result.add(new int[]{a, j});
+        int b = 1;
+        for (int a = i - 1; a >= 0 ; a--) {
+            result.add(new int[]{a, j + b});
+            b++;
         }
-        for (int b = 0; b < 8; b++) {
-            if (b != j) result.add(new int[]{i, b});
+        return result;
+    }
+
+    public List<int[]> findMovesUpLeft(int i, int j) {
+        List<int[]> result = new ArrayList<>();
+        int b = 1;
+        for (int a = i - 1; a >= 0 ; a--) {
+            result.add(new int[]{a, j - b});
+            b++;
+        }
+        return result;
+    }
+
+    public List<int[]> findMovesDownRight(int i, int j) {
+        List<int[]> result = new ArrayList<>();
+        int b = 1;
+        for (int a = i + 1; a < 8 ; a++) {
+            result.add(new int[]{a, j + b});
+            b++;
+        }
+        return result;
+    }
+
+    public List<int[]> findMovesDownLeft(int i, int j) {
+        List<int[]> result = new ArrayList<>();
+        int b = 1;
+        for (int a = i + 1; a < 8 ; a++) {
+            result.add(new int[]{a, j - b});
+            b++;
         }
         return result;
     }
