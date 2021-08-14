@@ -1,8 +1,10 @@
 import Piece.Empty;
 
+import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class GamePlay {
+
     public static void main(String[] args) {
         Grid grid = new Grid();
         grid.displayGrid();
@@ -48,4 +50,16 @@ public class Main {
             grid.displayGrid();
         }
     }
+
+
+    private List<int[]> removeFriends(int i, int j, List<int[]> input, Grid grid) {
+        String color = grid.grid[i][j].color.color;
+        for (int x = 0; i < input.size(); i++) {
+            if (grid.grid[input.get(x)[0]][input.get(x)[1]].color.color == color) {
+                input.remove(x);
+            }
+        }
+        return input;
+    }
+
 }

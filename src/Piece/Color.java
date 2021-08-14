@@ -2,9 +2,9 @@ package Piece;
 
 import java.util.NoSuchElementException;
 
-class Color {
+public class Color {
 
-    String color;
+    public String color;
 
     Color(String color) {
         if (color == "White" || color == "Black") {
@@ -12,9 +12,5 @@ class Color {
         } else {
             throw new NoSuchElementException("Piece.Color can only be 'White' or 'Black'");
         }
-    }
-
-    public String getColor() {
-        return this.color;
     }
 }

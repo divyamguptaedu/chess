@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class Piece {
-    Color color;
+    public Color color;
     @Override
     public abstract String toString();
 }
