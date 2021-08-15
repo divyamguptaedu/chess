@@ -32,6 +32,7 @@ public class Color {
     public String getColor() {
         return color;
     }
+
     /**
      * Setter function for the color property.
      * @param color string representing color of the piece.
