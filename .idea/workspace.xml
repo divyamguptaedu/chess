@@ -21,13 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9a4d6b8f-5cc9-4c7d-af0a-4db103059bc6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Bishop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Empty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/King.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece/Rook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +68,7 @@
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.20323326" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="org.infernus.idea.checkstyle.CheckStyleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -84,11 +77,11 @@
   </component>
   <component name="RunManager" selected="Application.GamePlay">
     <configuration name="Bishop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Piece.Bishop" />
+      <option name="MAIN_CLASS_NAME" value="Chess.Piece.Bishop" />
       <module name="chess" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Piece.*" />
+          <option name="PATTERN" value="Chess.Piece.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,7 +90,7 @@
       </method>
     </configuration>
     <configuration name="GamePlay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GamePlay" />
+      <option name="MAIN_CLASS_NAME" value="Chess.GamePlay" />
       <module name="chess" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -107,18 +100,18 @@
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Grid" />
+      <option name="MAIN_CLASS_NAME" value="Chess.Grid" />
       <module name="chess" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="King" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Piece.King" />
+      <option name="MAIN_CLASS_NAME" value="Chess.Piece.King" />
       <module name="chess" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Piece.*" />
+          <option name="PATTERN" value="Chess.Piece.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +120,11 @@
       </method>
     </configuration>
     <configuration name="Knight" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Piece.Knight" />
+      <option name="MAIN_CLASS_NAME" value="Chess.Piece.Knight" />
       <module name="chess" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Piece.*" />
+          <option name="PATTERN" value="Chess.Piece.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,11 +133,11 @@
       </method>
     </configuration>
     <configuration name="Rook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Piece.Rook" />
+      <option name="MAIN_CLASS_NAME" value="Chess.Piece.Rook" />
       <module name="chess" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Piece.*" />
+          <option name="PATTERN" value="Chess.Piece.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -187,7 +180,7 @@
       <workItem from="1628770557092" duration="156000" />
       <workItem from="1628770719854" duration="647000" />
       <workItem from="1628771391532" duration="32572000" />
-      <workItem from="1629004821824" duration="8810000" />
+      <workItem from="1629004821824" duration="10267000" />
     </task>
     <servers />
   </component>
@@ -240,38 +233,39 @@
     </state>
     <state x="458" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1629018785247" />
     <state x="458" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1440.785@0.25.1440.785" timestamp="1628744771991" />
-    <state x="467" y="276" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1628827662557">
-      <screen x="0" y="25" width="1440" height="785" />
-    </state>
-    <state x="467" y="276" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1440.785@0.25.1440.785" timestamp="1628827662557" />
-    <state width="1398" height="490" key="GridCell.Tab.0.bottom" timestamp="1629006652870">
+    <state x="467" y="288" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1629026539101">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629006652870" />
+    <state x="467" y="288" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1629026539101" />
+    <state x="467" y="276" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1440.785@0.25.1440.785" timestamp="1628827662557" />
+    <state width="1398" height="490" key="GridCell.Tab.0.bottom" timestamp="1629026539858">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629026539858" />
     <state width="1398" height="401" key="GridCell.Tab.0.bottom/0.25.1440.785@0.25.1440.785" timestamp="1628869003843" />
     <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.25.1440.788@0.25.1440.788" timestamp="1629006506693" />
-    <state width="1398" height="490" key="GridCell.Tab.0.center" timestamp="1629006652868">
+    <state width="1398" height="490" key="GridCell.Tab.0.center" timestamp="1629026539857">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629006652868" />
+    <state width="1398" height="490" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629026539857" />
     <state width="1398" height="401" key="GridCell.Tab.0.center/0.25.1440.785@0.25.1440.785" timestamp="1628869003842" />
     <state width="1398" height="490" key="GridCell.Tab.0.center/0.25.1440.788@0.25.1440.788" timestamp="1629006506691" />
-    <state width="1398" height="490" key="GridCell.Tab.0.left" timestamp="1629006652868">
+    <state width="1398" height="490" key="GridCell.Tab.0.left" timestamp="1629026539856">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629006652868" />
+    <state width="1398" height="490" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629026539856" />
     <state width="1398" height="401" key="GridCell.Tab.0.left/0.25.1440.785@0.25.1440.785" timestamp="1628869003839" />
     <state width="1398" height="490" key="GridCell.Tab.0.left/0.25.1440.788@0.25.1440.788" timestamp="1629006506690" />
-    <state width="1398" height="490" key="GridCell.Tab.0.right" timestamp="1629006652869">
+    <state width="1398" height="490" key="GridCell.Tab.0.right" timestamp="1629026539858">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629006652869" />
+    <state width="1398" height="490" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629026539858" />
     <state width="1398" height="401" key="GridCell.Tab.0.right/0.25.1440.785@0.25.1440.785" timestamp="1628869003842" />
     <state width="1398" height="490" key="GridCell.Tab.0.right/0.25.1440.788@0.25.1440.788" timestamp="1629006506692" />
-    <state x="229" y="25" width="1024" height="785" key="SettingsEditor" timestamp="1628869708381">
+    <state x="229" y="25" width="1024" height="785" key="SettingsEditor" timestamp="1629025858031">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="229" y="25" width="1024" height="785" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1628869708381" />
+    <state x="229" y="25" width="1024" height="785" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1629025858031" />
     <state x="420" y="230" key="refactoring.ChangeSignatureDialog" timestamp="1628869726997">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
