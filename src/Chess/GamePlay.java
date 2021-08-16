@@ -27,8 +27,8 @@ public class GamePlay {
         Scanner scanner = new Scanner(System.in);
         String temp;
         while (!gameEnd) {
-            System.out.println("Which piece do you want to move? (Type END to exit game.)");
-            System.out.println("Enter row index: ");
+            System.out.println("Which piece do you want to move?");
+            System.out.println("Enter row index: (Type END to exit game.)");
             temp = scanner.next();
             if (temp.equals("END")) {
                 gameEnd = true;
@@ -62,12 +62,27 @@ public class GamePlay {
                 System.out.println("It's not your turn.");
                 continue;
             }
-            System.out.println("Where do you want to move this piece? (Type END to exit game.)");
-            System.out.println("Enter row index: ");
+            System.out.println("Where do you want to move this piece?");
+            System.out.println("Enter row index: (Type HINT for a list of legal moves. Type END to exit game.)");
             temp = scanner.next();
             if (temp.equals("END")) {
                 gameEnd = true;
                 continue;
+            }
+            if (temp.equals("HINT")) {
+                if (grid.grid[i1][j1] instanceof Pawn) {
+                    System.out.println(print(filterPawnMoves(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid)));
+                }
+
+                if (grid.grid[i1][j1] instanceof Bishop || grid.grid[i1][j1] instanceof Rook || grid.grid[i1][j1] instanceof Queen) {
+                    System.out.println(print(limitTillEnemy(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid)));
+
+                }
+                if (grid.grid[i1][j1] instanceof King || grid.grid[i1][j1] instanceof Knight) {
+                    System.out.println(print(removeFriends(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid)));
+                }
+                System.out.println("Enter row index: ");
+                temp = scanner.next();
             }
             int i2 = Integer.parseInt(temp);
             if (i2 < 0 || i2 > 7) {
@@ -227,5 +242,26 @@ public class GamePlay {
             }
         }
         return false;
+    }
+
+    /**
+     * Converts the input list of lists into printable format.
+     * @param input  the list of all preliminary legal moves of the selected piece.
+     * @return printable list view
+     */
+    static List<List<Integer>> print(List<List<int[]>> input) {
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> temp;
+        for (List<int[]> list : input) {
+            for (int[] set : list) {
+                if (set.length > 0) {
+                    temp = new ArrayList<>();
+                    temp.add(set[0]);
+                    temp.add(set[1]);
+                    result.add(temp);
+                }
+            }
+        }
+        return result;
     }
 }
