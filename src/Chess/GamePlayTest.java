@@ -150,4 +150,51 @@ class GamePlayTest {
         Bishop bishop = new Bishop("White");
         assertEquals("White", bishop.getColor());
     }
+
+    @Test
+    public void QueenDefaultPosition() {
+        Queen queen = new Queen("Black");
+        List<List<int[]>> result = queen.findMoves(7, 3);
+        assertEquals(7, result.get(0).size());
+        assertEquals(0, result.get(1).size());
+        assertEquals(4, result.get(2).size());
+        assertEquals(3, result.get(3).size());
+        assertEquals(4, result.get(4).size());
+        assertEquals(3, result.get(5).size());
+        assertEquals(0, result.get(6).size());
+        assertEquals(0, result.get(7).size());
+        assertEquals(true, GamePlay.contains(0, 3, result));
+        assertEquals(true, GamePlay.contains(7, 7, result));
+        assertEquals(true, GamePlay.contains(7, 0, result));
+        assertEquals(true, GamePlay.contains(3, 7, result));
+        assertEquals(true, GamePlay.contains(4, 0, result));
+    }
+
+    @Test
+    public void QueenGamePlayPosition() {
+        Queen queen = new Queen("White");
+        List<List<int[]>> result = queen.findMoves(4, 4);
+        assertEquals(4, result.get(0).size());
+        assertEquals(3, result.get(1).size());
+        assertEquals(3, result.get(2).size());
+        assertEquals(4, result.get(3).size());
+        assertEquals(3, result.get(4).size());
+        assertEquals(4, result.get(5).size());
+        assertEquals(3, result.get(6).size());
+        assertEquals(3, result.get(7).size());
+        assertEquals(true, GamePlay.contains(0, 4, result));
+        assertEquals(true, GamePlay.contains(7, 4, result));
+        assertEquals(true, GamePlay.contains(4, 0, result));
+        assertEquals(true, GamePlay.contains(4, 7, result));
+        assertEquals(true, GamePlay.contains(1, 7, result));
+        assertEquals(true, GamePlay.contains(0, 0, result));
+        assertEquals(true, GamePlay.contains(7, 1, result));
+        assertEquals(true, GamePlay.contains(7, 7, result));
+    }
+
+    @Test
+    public void QueenColor() {
+        Queen queen = new Queen("White");
+        assertEquals("White", queen.getColor());
+    }
 }
