@@ -19,7 +19,7 @@ public class GamePlay {
     /**
      * This method runs the whole mechanism of creating, displaying, editing, and updating the grid.
      */
-    private static void play() {
+    static void play() {
         Grid grid = new Grid();
         grid.displayGrid();
         boolean blackMove = true;
