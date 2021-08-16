@@ -86,19 +86,19 @@ public class GamePlay {
                 continue;
             }
             if (grid.grid[i1][j1] instanceof Pawn) {
-                if (contains(i2, j2, filterPawnMoves(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
+                if (!contains(i2, j2, filterPawnMoves(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
                     System.out.println("That's an invalid move.");
                     continue;
                 }
             }
             if (grid.grid[i1][j1] instanceof Bishop || grid.grid[i1][j1] instanceof Rook || grid.grid[i1][j1] instanceof Queen) {
-                if (contains(i2, j2, limitTillEnemy(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
+                if (!contains(i2, j2, limitTillEnemy(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
                     System.out.println("That's an invalid move.");
                     continue;
                 }
             }
             if (grid.grid[i1][j1] instanceof King || grid.grid[i1][j1] instanceof Knight) {
-                if (contains(i2, j2, removeFriends(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
+                if (!contains(i2, j2, removeFriends(i1, j1, (grid.grid[i1][j1]).findMoves(i1, j1), grid))) {
                     System.out.println("That's an invalid move.");
                     continue;
                 }
@@ -218,14 +218,14 @@ public class GamePlay {
      * @param input  the list of all preliminary legal moves of the selected piece.
      * @return true if the move is legal, false if not.
      */
-    private static boolean contains(int i, int j, List<List<int[]>> input) {
+    public static boolean contains(int i, int j, List<List<int[]>> input) {
         for (List<int[]> list : input) {
             for (int[] set : list) {
                 if (set[0] == i && set[1] == j) {
-                    return false;
+                    return true;
                 }
             }
         }
-        return true;
+        return false;
     }
 }
