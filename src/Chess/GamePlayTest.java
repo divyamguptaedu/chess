@@ -238,4 +238,65 @@ class GamePlayTest {
         assertNull(empty.findMoves(4, 4));
     }
 
+    @Test
+    public void RemoveFriendsTest() {
+        Grid grid = new Grid();
+        List<List<int[]>> result = GamePlay.removeFriends(7, 4, grid.grid[7][4].findMoves(7, 4), grid);
+        assertEquals(0, result.get(0).size());
+    }
+
+    @Test
+    public void LimitEnemyTest() {
+        Grid grid = new Grid();
+        List<List<int[]>> result = GamePlay.limitTillEnemy(7, 0, grid.grid[7][0].findMoves(7, 0), grid);
+        assertEquals(0, result.get(0).size());
+    }
+
+    @Test
+    public void FilterPawnMovesTestOne() {
+        Grid grid = new Grid();
+        List<List<int[]>> result = GamePlay.filterPawnMoves(6, 0, grid.grid[6][0].findMoves(6, 0), grid);
+        assertEquals(2, result.get(0).size());
+        assertEquals(0, result.get(1).size());
+        assertTrue(GamePlay.contains(5, 0, result));
+        assertTrue(GamePlay.contains(4, 0, result));
+    }
+
+
+    @Test
+    public void FilterPawnMovesTestTwo() {
+        Grid grid = new Grid();
+        Pawn pawn = new Pawn("Black");
+        pawn.firstMoveDone = true;
+        List<List<int[]>> result = pawn.findMoves(6, 4);
+        List<List<int[]>> finalResult = GamePlay.filterPawnMoves(6, 4, pawn.findMoves(6, 4), grid);
+        assertEquals(1, finalResult.get(0).size());
+        assertEquals(0, finalResult.get(1).size());
+        assertTrue(GamePlay.contains(5, 4, finalResult));
+    }
+
+
+    @Test
+    public void SwapTest() {
+        Grid grid = new Grid();
+        grid.swap(6, 0, 5, 0);
+        assertEquals("P", grid.grid[5][0].toString());
+        assertEquals("_", grid.grid[6][0].toString());
+    }
+
+    @Test
+    public void StringTests() {
+        Pawn pawn = new Pawn("Black");
+        Rook rook = new Rook("Black");
+        Bishop bishop = new Bishop("Black");
+        Queen queen = new Queen("Black");
+        King king = new King("Black");
+        Knight knight = new Knight("Black");
+        assertEquals("P", pawn.toString());
+        assertEquals("R", rook.toString());
+        assertEquals("B", bishop.toString());
+        assertEquals("Q", queen.toString());
+        assertEquals("K", king.toString());
+        assertEquals("N", knight.toString());
+    }
 }

@@ -132,7 +132,7 @@ public class GamePlay {
      * @param grid  the current grid status.
      * @return the list of all totally legal moves of the selected piece.
      */
-    private static List<List<int[]>> removeFriends(int i, int j, List<List<int[]>> input, Grid grid) {
+    static List<List<int[]>> removeFriends(int i, int j, List<List<int[]>> input, Grid grid) {
         String color = grid.grid[i][j].getColor();
         for (int x = 0; x < input.get(0).size(); x++) {
             if (!(grid.grid[input.get(0).get(x)[0]][input.get(0).get(x)[1]] instanceof Empty)) {
@@ -154,7 +154,7 @@ public class GamePlay {
      * @param grid  the current grid status.
      * @return the list of all totally legal moves of the selected piece.
      */
-    private static List<List<int[]>> limitTillEnemy(int i, int j, List<List<int[]>> input, Grid grid) {
+    static List<List<int[]>> limitTillEnemy(int i, int j, List<List<int[]>> input, Grid grid) {
         String color = grid.grid[i][j].getColor();
         List<List<int[]>> result = new ArrayList<>();
         List<int[]> temp;
@@ -184,7 +184,7 @@ public class GamePlay {
      * @param grid  the current grid status.
      * @return the list of all totally legal moves of the selected piece.
      */
-    private static List<List<int[]>> filterPawnMoves(int i, int j, List<List<int[]>> input, Grid grid) {
+    static List<List<int[]>> filterPawnMoves(int i, int j, List<List<int[]>> input, Grid grid) {
         String color = grid.grid[i][j].getColor();
         if (((Pawn) grid.grid[i][j]).firstMoveDone) {
             if (!(grid.grid[input.get(0).get(0)[0]][input.get(0).get(0)[1]] instanceof Empty)) {
@@ -218,7 +218,7 @@ public class GamePlay {
      * @param input  the list of all preliminary legal moves of the selected piece.
      * @return true if the move is legal, false if not.
      */
-    public static boolean contains(int i, int j, List<List<int[]>> input) {
+    static boolean contains(int i, int j, List<List<int[]>> input) {
         for (List<int[]> list : input) {
             for (int[] set : list) {
                 if (set[0] == i && set[1] == j) {
