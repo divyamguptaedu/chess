@@ -98,7 +98,7 @@ class GamePlayTest {
     }
 
     @Test
-    public void KnightGamePlayPositionPosition() {
+    public void KnightGamePlayPosition() {
         Knight knight = new Knight("White");
         List<List<int[]>> result = knight.findMoves(4, 4);
         assertEquals(8, result.get(0).size());
@@ -116,5 +116,38 @@ class GamePlayTest {
     public void KnightColor() {
         Knight knight = new Knight("Black");
         assertEquals("Black", knight.getColor());
+    }
+
+    @Test
+    public void BishopDefaultPosition() {
+        Bishop bishop = new Bishop("Black");
+        List<List<int[]>> result = bishop.findMoves(7, 2);
+        assertEquals(5, result.get(0).size());
+        assertEquals(2, result.get(1).size());
+        assertEquals(0, result.get(2).size());
+        assertEquals(0, result.get(3).size());
+        assertEquals(true, GamePlay.contains(5, 0, result));
+        assertEquals(true, GamePlay.contains(6, 1, result));
+        assertEquals(true, GamePlay.contains(2, 7, result));
+    }
+
+    @Test
+    public void BishopGamePlayPosition() {
+        Bishop bishop = new Bishop("White");
+        List<List<int[]>> result = bishop.findMoves(4, 4);
+        assertEquals(3, result.get(0).size());
+        assertEquals(4, result.get(1).size());
+        assertEquals(3, result.get(2).size());
+        assertEquals(3, result.get(3).size());
+        assertEquals(true, GamePlay.contains(1, 7, result));
+        assertEquals(true, GamePlay.contains(0, 0, result));
+        assertEquals(true, GamePlay.contains(7, 1, result));
+        assertEquals(true, GamePlay.contains(7, 7, result));
+    }
+
+    @Test
+    public void BishopColor() {
+        Bishop bishop = new Bishop("White");
+        assertEquals("White", bishop.getColor());
     }
 }
