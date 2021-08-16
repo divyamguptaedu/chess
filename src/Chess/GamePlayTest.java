@@ -12,9 +12,9 @@ class GamePlayTest {
         List<List<int[]>> result = pawn.findMoves(1, 0);
         assertEquals(2, result.get(0).size());
         assertEquals(1, result.get(1).size());
-        assertEquals(true, GamePlay.contains(2, 0, result));
-        assertEquals(true, GamePlay.contains(3, 0, result));
-        assertEquals(true, GamePlay.contains(2, 1, result));
+        assertTrue(GamePlay.contains(2, 0, result));
+        assertTrue(GamePlay.contains(3, 0, result));
+        assertTrue(GamePlay.contains(2, 1, result));
     }
 
     @Test
@@ -23,10 +23,10 @@ class GamePlayTest {
         List<List<int[]>> result = pawn.findMoves(1, 1);
         assertEquals(2, result.get(0).size());
         assertEquals(2, result.get(1).size());
-        assertEquals(true, GamePlay.contains(2, 1, result));
-        assertEquals(true, GamePlay.contains(3, 1, result));
-        assertEquals(true, GamePlay.contains(2, 0, result));
-        assertEquals(true, GamePlay.contains(2, 2, result));
+        assertTrue(GamePlay.contains(2, 1, result));
+        assertTrue(GamePlay.contains(3, 1, result));
+        assertTrue(GamePlay.contains(2, 0, result));
+        assertTrue(GamePlay.contains(2, 2, result));
     }
 
     @Test
@@ -36,9 +36,9 @@ class GamePlayTest {
         List<List<int[]>> result = pawn.findMoves(4, 4);
         assertEquals(1, result.get(0).size());
         assertEquals(2, result.get(1).size());
-        assertEquals(true, GamePlay.contains(3, 4, result));
-        assertEquals(true, GamePlay.contains(3, 3, result));
-        assertEquals(true, GamePlay.contains(3, 5, result));
+        assertTrue(GamePlay.contains(3, 4, result));
+        assertTrue(GamePlay.contains(3, 3, result));
+        assertTrue(GamePlay.contains(3, 5, result));
     }
 
     @Test
@@ -63,8 +63,8 @@ class GamePlayTest {
         assertEquals(0, result.get(1).size());
         assertEquals(7, result.get(2).size());
         assertEquals(0, result.get(3).size());
-        assertEquals(true, GamePlay.contains(0, 0, result));
-        assertEquals(true, GamePlay.contains(7, 7, result));
+        assertTrue(GamePlay.contains(0, 0, result));
+        assertTrue(GamePlay.contains(7, 7, result));
     }
 
     @Test
@@ -75,10 +75,10 @@ class GamePlayTest {
         assertEquals(3, result.get(1).size());
         assertEquals(3, result.get(2).size());
         assertEquals(4, result.get(3).size());
-        assertEquals(true, GamePlay.contains(7, 4, result));
-        assertEquals(true, GamePlay.contains(0, 4, result));
-        assertEquals(true, GamePlay.contains(4, 7, result));
-        assertEquals(true, GamePlay.contains(4, 0, result));
+        assertTrue(GamePlay.contains(7, 4, result));
+        assertTrue(GamePlay.contains(0, 4, result));
+        assertTrue(GamePlay.contains(4, 7, result));
+        assertTrue(GamePlay.contains(4, 0, result));
     }
 
     @Test
@@ -92,9 +92,9 @@ class GamePlayTest {
         Knight knight = new Knight("Black");
         List<List<int[]>> result = knight.findMoves(7, 1);
         assertEquals(3, result.get(0).size());
-        assertEquals(true, GamePlay.contains(5, 0, result));
-        assertEquals(true, GamePlay.contains(5, 2, result));
-        assertEquals(true, GamePlay.contains(6, 3, result));
+        assertTrue(GamePlay.contains(5, 0, result));
+        assertTrue(GamePlay.contains(5, 2, result));
+        assertTrue(GamePlay.contains(6, 3, result));
     }
 
     @Test
@@ -102,14 +102,14 @@ class GamePlayTest {
         Knight knight = new Knight("White");
         List<List<int[]>> result = knight.findMoves(4, 4);
         assertEquals(8, result.get(0).size());
-        assertEquals(true, GamePlay.contains(2, 3, result));
-        assertEquals(true, GamePlay.contains(2, 5, result));
-        assertEquals(true, GamePlay.contains(3, 2, result));
-        assertEquals(true, GamePlay.contains(3, 6, result));
-        assertEquals(true, GamePlay.contains(5, 2, result));
-        assertEquals(true, GamePlay.contains(5, 6, result));
-        assertEquals(true, GamePlay.contains(6, 3, result));
-        assertEquals(true, GamePlay.contains(6, 5, result));
+        assertTrue(GamePlay.contains(2, 3, result));
+        assertTrue(GamePlay.contains(2, 5, result));
+        assertTrue(GamePlay.contains(3, 2, result));
+        assertTrue(GamePlay.contains(3, 6, result));
+        assertTrue(GamePlay.contains(5, 2, result));
+        assertTrue(GamePlay.contains(5, 6, result));
+        assertTrue(GamePlay.contains(6, 3, result));
+        assertTrue(GamePlay.contains(6, 5, result));
     }
 
     @Test
@@ -126,9 +126,9 @@ class GamePlayTest {
         assertEquals(2, result.get(1).size());
         assertEquals(0, result.get(2).size());
         assertEquals(0, result.get(3).size());
-        assertEquals(true, GamePlay.contains(5, 0, result));
-        assertEquals(true, GamePlay.contains(6, 1, result));
-        assertEquals(true, GamePlay.contains(2, 7, result));
+        assertTrue(GamePlay.contains(5, 0, result));
+        assertTrue(GamePlay.contains(6, 1, result));
+        assertTrue(GamePlay.contains(2, 7, result));
     }
 
     @Test
@@ -139,10 +139,10 @@ class GamePlayTest {
         assertEquals(4, result.get(1).size());
         assertEquals(3, result.get(2).size());
         assertEquals(3, result.get(3).size());
-        assertEquals(true, GamePlay.contains(1, 7, result));
-        assertEquals(true, GamePlay.contains(0, 0, result));
-        assertEquals(true, GamePlay.contains(7, 1, result));
-        assertEquals(true, GamePlay.contains(7, 7, result));
+        assertTrue(GamePlay.contains(1, 7, result));
+        assertTrue(GamePlay.contains(0, 0, result));
+        assertTrue(GamePlay.contains(7, 1, result));
+        assertTrue(GamePlay.contains(7, 7, result));
     }
 
     @Test
@@ -163,11 +163,11 @@ class GamePlayTest {
         assertEquals(3, result.get(5).size());
         assertEquals(0, result.get(6).size());
         assertEquals(0, result.get(7).size());
-        assertEquals(true, GamePlay.contains(0, 3, result));
-        assertEquals(true, GamePlay.contains(7, 7, result));
-        assertEquals(true, GamePlay.contains(7, 0, result));
-        assertEquals(true, GamePlay.contains(3, 7, result));
-        assertEquals(true, GamePlay.contains(4, 0, result));
+        assertTrue(GamePlay.contains(0, 3, result));
+        assertTrue(GamePlay.contains(7, 7, result));
+        assertTrue(GamePlay.contains(7, 0, result));
+        assertTrue(GamePlay.contains(3, 7, result));
+        assertTrue(GamePlay.contains(4, 0, result));
     }
 
     @Test
@@ -182,14 +182,14 @@ class GamePlayTest {
         assertEquals(4, result.get(5).size());
         assertEquals(3, result.get(6).size());
         assertEquals(3, result.get(7).size());
-        assertEquals(true, GamePlay.contains(0, 4, result));
-        assertEquals(true, GamePlay.contains(7, 4, result));
-        assertEquals(true, GamePlay.contains(4, 0, result));
-        assertEquals(true, GamePlay.contains(4, 7, result));
-        assertEquals(true, GamePlay.contains(1, 7, result));
-        assertEquals(true, GamePlay.contains(0, 0, result));
-        assertEquals(true, GamePlay.contains(7, 1, result));
-        assertEquals(true, GamePlay.contains(7, 7, result));
+        assertTrue(GamePlay.contains(0, 4, result));
+        assertTrue(GamePlay.contains(7, 4, result));
+        assertTrue(GamePlay.contains(4, 0, result));
+        assertTrue(GamePlay.contains(4, 7, result));
+        assertTrue(GamePlay.contains(1, 7, result));
+        assertTrue(GamePlay.contains(0, 0, result));
+        assertTrue(GamePlay.contains(7, 1, result));
+        assertTrue(GamePlay.contains(7, 7, result));
     }
 
     @Test
@@ -197,4 +197,45 @@ class GamePlayTest {
         Queen queen = new Queen("White");
         assertEquals("White", queen.getColor());
     }
+
+    @Test
+    public void KingDefaultPosition() {
+        King king = new King("Black");
+        List<List<int[]>> result = king.findMoves(7, 4);
+        assertEquals(5, result.get(0).size());
+        assertTrue(GamePlay.contains(7, 3, result));
+        assertTrue(GamePlay.contains(7, 5, result));
+        assertTrue(GamePlay.contains(6, 4, result));
+        assertTrue(GamePlay.contains(6, 5, result));
+        assertTrue(GamePlay.contains(6, 4, result));
+    }
+
+    @Test
+    public void KingGamePlayPosition() {
+        King king = new King("White");
+        List<List<int[]>> result = king.findMoves(4, 4);
+        assertEquals(8, result.get(0).size());
+        assertTrue(GamePlay.contains(4, 3, result));
+        assertTrue(GamePlay.contains(4, 5, result));
+        assertTrue(GamePlay.contains(5, 4, result));
+        assertTrue(GamePlay.contains(3, 4, result));
+        assertTrue(GamePlay.contains(3, 3, result));
+        assertTrue(GamePlay.contains(3, 5, result));
+        assertTrue(GamePlay.contains(5, 3, result));
+        assertTrue(GamePlay.contains(5, 5, result));
+    }
+
+    @Test
+    public void KingColor() {
+        King king = new King("White");
+        assertEquals("White", king.getColor());
+    }
+
+    @Test
+    public void EmptyTest() {
+        Empty empty = new Empty();
+        assertNull(empty.getColor());
+        assertNull(empty.findMoves(4, 4));
+    }
+
 }

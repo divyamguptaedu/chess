@@ -130,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamePlayTest.BishopDefaultPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamePlayTest.EmptyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chess" />
       <extension name="coverage">
         <pattern>
@@ -140,13 +140,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Chess" />
       <option name="MAIN_CLASS_NAME" value="Chess.GamePlayTest" />
-      <option name="METHOD_NAME" value="BishopDefaultPosition" />
+      <option name="METHOD_NAME" value="EmptyTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamePlayTest.BishopGamePlayPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamePlayTest.KingDefaultPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chess" />
       <extension name="coverage">
         <pattern>
@@ -156,7 +156,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Chess" />
       <option name="MAIN_CLASS_NAME" value="Chess.GamePlayTest" />
-      <option name="METHOD_NAME" value="BishopGamePlayPosition" />
+      <option name="METHOD_NAME" value="KingDefaultPosition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,10 +197,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GamePlayTest" />
+        <item itemvalue="JUnit.GamePlayTest.EmptyTest" />
+        <item itemvalue="JUnit.GamePlayTest.KingDefaultPosition" />
         <item itemvalue="JUnit.GamePlayTest.QueenGamePlayPosition" />
         <item itemvalue="JUnit.GamePlayTest.QueenDefaultPosition" />
-        <item itemvalue="JUnit.GamePlayTest.BishopGamePlayPosition" />
-        <item itemvalue="JUnit.GamePlayTest.BishopDefaultPosition" />
       </list>
     </recent_temporary>
   </component>
@@ -276,28 +276,28 @@
     </state>
     <state x="467" y="288" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1629026539101" />
     <state x="467" y="276" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1440.785@0.25.1440.785" timestamp="1628827662557" />
-    <state width="1398" height="490" key="GridCell.Tab.0.bottom" timestamp="1629107260858">
+    <state width="1398" height="490" key="GridCell.Tab.0.bottom" timestamp="1629108249485">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629107260858" />
+    <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629108249485" />
     <state width="1398" height="401" key="GridCell.Tab.0.bottom/0.25.1440.785@0.25.1440.785" timestamp="1628869003843" />
     <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.25.1440.788@0.25.1440.788" timestamp="1629006506693" />
-    <state width="1398" height="490" key="GridCell.Tab.0.center" timestamp="1629107260857">
+    <state width="1398" height="490" key="GridCell.Tab.0.center" timestamp="1629108249483">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629107260857" />
+    <state width="1398" height="490" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629108249483" />
     <state width="1398" height="401" key="GridCell.Tab.0.center/0.25.1440.785@0.25.1440.785" timestamp="1628869003842" />
     <state width="1398" height="490" key="GridCell.Tab.0.center/0.25.1440.788@0.25.1440.788" timestamp="1629006506691" />
-    <state width="1398" height="490" key="GridCell.Tab.0.left" timestamp="1629107260856">
+    <state width="1398" height="490" key="GridCell.Tab.0.left" timestamp="1629108249482">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629107260856" />
+    <state width="1398" height="490" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629108249482" />
     <state width="1398" height="401" key="GridCell.Tab.0.left/0.25.1440.785@0.25.1440.785" timestamp="1628869003839" />
     <state width="1398" height="490" key="GridCell.Tab.0.left/0.25.1440.788@0.25.1440.788" timestamp="1629006506690" />
-    <state width="1398" height="490" key="GridCell.Tab.0.right" timestamp="1629107260858">
+    <state width="1398" height="490" key="GridCell.Tab.0.right" timestamp="1629108249484">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="490" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629107260858" />
+    <state width="1398" height="490" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629108249484" />
     <state width="1398" height="401" key="GridCell.Tab.0.right/0.25.1440.785@0.25.1440.785" timestamp="1628869003842" />
     <state width="1398" height="490" key="GridCell.Tab.0.right/0.25.1440.788@0.25.1440.788" timestamp="1629006506692" />
     <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1629092230086">
@@ -328,13 +328,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="499" y="260" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.900@0.0.1440.900" timestamp="1629091665825" />
+    <state x="458" y="192" key="extract.method.dialog" timestamp="1629108387378">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="192" key="extract.method.dialog/0.0.1440.900@0.0.1440.900" timestamp="1629108387378" />
     <state x="420" y="230" key="refactoring.ChangeSignatureDialog" timestamp="1628869726997">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="420" y="230" key="refactoring.ChangeSignatureDialog/0.0.1440.900@0.0.1440.900" timestamp="1628869726997" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Chess$GamePlayTest.ic" NAME="GamePlayTest Coverage Results" MODIFIED="1629107255378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Chess$GamePlayTest.ic" NAME="GamePlayTest Coverage Results" MODIFIED="1629108245806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Chess.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Chess$GamePlayTest_PawnDefaultPosition.ic" NAME="GamePlayTest.PawnDefaultPosition Coverage Results" MODIFIED="1629092380057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
