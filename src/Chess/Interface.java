@@ -2,9 +2,11 @@ package Chess;
 
 import Chess.Piece.*;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -91,9 +93,54 @@ public class Interface extends Application {
                 count++;
             }
         }
+        gridPane.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                int col  = covertToInt(mouseEvent.getX());
+                int row  = covertToInt(mouseEvent.getY());
+                System.out.println("Pressed " + row + "" + col);
+            }
+        });
+        gridPane.setOnMouseReleased(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                int col  = covertToInt(mouseEvent.getX());
+                int row  = covertToInt(mouseEvent.getY());
+                System.out.println("Released " + row + "" + col);
+
+            }
+        });
         Scene scene = new Scene(gridPane, 600, 600);
         primaryStage.setTitle("Chess");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    private static int covertToInt(double x) {
+        if (x >= 0.0 && x <= 75.0) {
+            return 0;
+        }
+        if (x >= 75.0 && x <= 150.0) {
+            return 1;
+        }
+        if (x >= 150.0 && x <= 225.0) {
+            return 2;
+        }
+        if (x >= 225.0 && x <= 300.0) {
+            return 3;
+        }
+        if (x >= 300.0 && x <= 375.0) {
+            return 4;
+        }
+        if (x >= 375.0 && x <= 450.0) {
+            return 5;
+        }
+        if (x >= 450.0 && x <= 525.0) {
+            return 6;
+        }
+        if (x >= 525.0 && x <= 600.0) {
+            return 7;
+        }
+        return 8;
     }
 }

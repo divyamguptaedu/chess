@@ -20,11 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a4d6b8f-5cc9-4c7d-af0a-4db103059bc6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/chess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chess.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/black.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/pngtree-black-chess-pawn-png-image_3539520.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/white.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/bishop_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/bishop_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/bishop_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/bishop_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/king_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/king_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/king_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/king_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/knight_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/knight_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/knight_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/knight_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/pawn_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/pawn_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/pawn_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/pawn_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/queen_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/queen_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/queen_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/queen_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/rook_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/rook_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/rook_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/rook_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/bishop_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/bishop_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/bishop_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/bishop_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/king_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/king_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/king_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/king_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/knight_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/knight_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/knight_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/knight_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/pawn_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/pawn_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/pawn_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/pawn_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/queen_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/queen_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/queen_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/queen_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/rook_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rook_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/rook_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rook_white.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Chess/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Interface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,17 +160,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GamePlayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chess" />
       <extension name="coverage">
@@ -233,7 +242,9 @@
       <workItem from="1629126599963" duration="923000" />
       <workItem from="1629174483279" duration="4042000" />
       <workItem from="1629194606354" duration="134000" />
-      <workItem from="1629197491233" duration="6804000" />
+      <workItem from="1629197491233" duration="11770000" />
+      <workItem from="1629276156496" duration="696000" />
+      <workItem from="1629281289258" duration="2345000" />
     </task>
     <servers />
   </component>
@@ -295,32 +306,32 @@
     </state>
     <state x="467" y="288" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1629026539101" />
     <state x="467" y="276" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1440.785@0.25.1440.785" timestamp="1628827662557" />
-    <state width="1398" height="491" key="GridCell.Tab.0.bottom" timestamp="1629205802703">
+    <state width="1398" height="115" key="GridCell.Tab.0.bottom" timestamp="1629283472418">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="491" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629205802703" />
-    <state width="1398" height="491" key="GridCell.Tab.0.bottom/0.25.1440.782@0.25.1440.782" timestamp="1629204890374" />
+    <state width="1398" height="115" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629283472418" />
+    <state width="1398" height="491" key="GridCell.Tab.0.bottom/0.25.1440.782@0.25.1440.782" timestamp="1629268109981" />
     <state width="1398" height="491" key="GridCell.Tab.0.bottom/0.25.1440.785@0.25.1440.785" timestamp="1629203704374" />
     <state width="1398" height="490" key="GridCell.Tab.0.bottom/0.25.1440.788@0.25.1440.788" timestamp="1629006506693" />
-    <state width="1398" height="491" key="GridCell.Tab.0.center" timestamp="1629205802701">
+    <state width="1398" height="115" key="GridCell.Tab.0.center" timestamp="1629283472417">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="491" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629205802701" />
-    <state width="1398" height="491" key="GridCell.Tab.0.center/0.25.1440.782@0.25.1440.782" timestamp="1629204890373" />
+    <state width="1398" height="115" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629283472417" />
+    <state width="1398" height="491" key="GridCell.Tab.0.center/0.25.1440.782@0.25.1440.782" timestamp="1629268109981" />
     <state width="1398" height="491" key="GridCell.Tab.0.center/0.25.1440.785@0.25.1440.785" timestamp="1629203704373" />
     <state width="1398" height="490" key="GridCell.Tab.0.center/0.25.1440.788@0.25.1440.788" timestamp="1629006506691" />
-    <state width="1398" height="491" key="GridCell.Tab.0.left" timestamp="1629205802700">
+    <state width="1398" height="115" key="GridCell.Tab.0.left" timestamp="1629283472416">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="491" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629205802700" />
-    <state width="1398" height="491" key="GridCell.Tab.0.left/0.25.1440.782@0.25.1440.782" timestamp="1629204890372" />
+    <state width="1398" height="115" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629283472416" />
+    <state width="1398" height="491" key="GridCell.Tab.0.left/0.25.1440.782@0.25.1440.782" timestamp="1629268109980" />
     <state width="1398" height="491" key="GridCell.Tab.0.left/0.25.1440.785@0.25.1440.785" timestamp="1629203704372" />
     <state width="1398" height="490" key="GridCell.Tab.0.left/0.25.1440.788@0.25.1440.788" timestamp="1629006506690" />
-    <state width="1398" height="491" key="GridCell.Tab.0.right" timestamp="1629205802702">
+    <state width="1398" height="115" key="GridCell.Tab.0.right" timestamp="1629283472417">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="491" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629205802702" />
-    <state width="1398" height="491" key="GridCell.Tab.0.right/0.25.1440.782@0.25.1440.782" timestamp="1629204890373" />
+    <state width="1398" height="115" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629283472417" />
+    <state width="1398" height="491" key="GridCell.Tab.0.right/0.25.1440.782@0.25.1440.782" timestamp="1629268109981" />
     <state width="1398" height="491" key="GridCell.Tab.0.right/0.25.1440.785@0.25.1440.785" timestamp="1629203704373" />
     <state width="1398" height="490" key="GridCell.Tab.0.right/0.25.1440.788@0.25.1440.788" timestamp="1629006506692" />
     <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1629117190204">
