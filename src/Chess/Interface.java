@@ -93,12 +93,14 @@ public class Interface extends Application {
                 count++;
             }
         }
+        int[] indexArray = new int[4];
         gridPane.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 int col  = covertToInt(mouseEvent.getX());
                 int row  = covertToInt(mouseEvent.getY());
-                System.out.println("Pressed " + row + "" + col);
+                indexArray[0] = row;
+                indexArray[1] = col;
             }
         });
         gridPane.setOnMouseReleased(new EventHandler<MouseEvent>() {
@@ -106,8 +108,9 @@ public class Interface extends Application {
             public void handle(MouseEvent mouseEvent) {
                 int col  = covertToInt(mouseEvent.getX());
                 int row  = covertToInt(mouseEvent.getY());
-                System.out.println("Released " + row + "" + col);
-
+                indexArray[2] = row;
+                indexArray[3] = col;
+                processRequest(indexArray, gridPane, grid);
             }
         });
         Scene scene = new Scene(gridPane, 600, 600);
@@ -142,5 +145,12 @@ public class Interface extends Application {
             return 7;
         }
         return 8;
+    }
+
+    private void processRequest(int[] indexArray, GridPane gridPane, Grid grid) {
+        StackPane from = (StackPane) gridPane.getChildren().get((indexArray[0] * 8) + indexArray[1]);
+        StackPane to = (StackPane) gridPane.getChildren().get((indexArray[2] * 8) + indexArray[3]);
+        ImageView image = (ImageView) from.getChildren().remove(1);
+        to.getChildren().add(image);
     }
 }
