@@ -1,9 +1,9 @@
 package Chess;
-
 import Chess.Piece.*;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -13,7 +13,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import static Chess.GamePlay.*;
+
 public class Interface extends Application {
+
+    boolean blackMove = true;
 
     @Override
     public void start(Stage primaryStage) {
@@ -149,8 +153,91 @@ public class Interface extends Application {
 
     private void processRequest(int[] indexArray, GridPane gridPane, Grid grid) {
         StackPane from = (StackPane) gridPane.getChildren().get((indexArray[0] * 8) + indexArray[1]);
+        if (from.getChildren().size() == 1) {
+            Alert textAlert = new Alert(Alert.AlertType.ERROR);
+            textAlert.setTitle("Error Dialog");
+            textAlert.setHeaderText("Invalid Move");
+            textAlert.setContentText("There is no chess piece present there.");
+            textAlert.showAndWait();
+            return;
+        }
+        if (blackMove && !grid.grid[indexArray[0]][indexArray[1]].getColor().equals("Black")) {
+            Alert textAlert = new Alert(Alert.AlertType.ERROR);
+            textAlert.setTitle("Error Dialog");
+            textAlert.setHeaderText("Invalid Move");
+            textAlert.setContentText("This is not your turn.");
+            textAlert.showAndWait();
+            return;
+        }
+        if (!blackMove && !grid.grid[indexArray[0]][indexArray[1]].getColor().equals("White")) {
+            Alert textAlert = new Alert(Alert.AlertType.ERROR);
+            textAlert.setTitle("Error Dialog");
+            textAlert.setHeaderText("Invalid Move");
+            textAlert.setContentText("This is not your turn.");
+            textAlert.showAndWait();
+            return;
+        }
         StackPane to = (StackPane) gridPane.getChildren().get((indexArray[2] * 8) + indexArray[3]);
-        ImageView image = (ImageView) from.getChildren().remove(1);
-        to.getChildren().add(image);
+        if (grid.grid[indexArray[0]][indexArray[1]] instanceof Pawn) {
+                if (!contains(indexArray[2], indexArray[3], filterPawnMoves(indexArray[0], indexArray[1], (grid.grid[indexArray[0]][indexArray[1]]).findMoves(indexArray[0], indexArray[1]), grid))) {
+                    Alert textAlert = new Alert(Alert.AlertType.ERROR);
+                    textAlert.setTitle("Error Dialog");
+                    textAlert.setHeaderText("Invalid Move");
+                    textAlert.setContentText("Wrong destination.");
+                    textAlert.showAndWait();
+                    return;
+                }
+            }
+        if (grid.grid[indexArray[0]][indexArray[1]] instanceof Bishop || grid.grid[indexArray[0]][indexArray[1]] instanceof Rook || grid.grid[indexArray[0]][indexArray[1]] instanceof Queen) {
+                if (!contains(indexArray[2], indexArray[3], limitTillEnemy(indexArray[0], indexArray[1], (grid.grid[indexArray[0]][indexArray[1]]).findMoves(indexArray[0], indexArray[1]), grid))) {
+                    Alert textAlert = new Alert(Alert.AlertType.ERROR);
+                    textAlert.setTitle("Error Dialog");
+                    textAlert.setHeaderText("Invalid Move");
+                    textAlert.setContentText("Wrong destination.");
+                    textAlert.showAndWait();
+                    return;
+                }
+            }
+        if (grid.grid[indexArray[0]][indexArray[1]] instanceof King || grid.grid[indexArray[0]][indexArray[1]] instanceof Knight) {
+                if (!contains(indexArray[2], indexArray[3], removeFriends(indexArray[0], indexArray[1], (grid.grid[indexArray[0]][indexArray[1]]).findMoves(indexArray[0], indexArray[1]), grid))) {
+                    Alert textAlert = new Alert(Alert.AlertType.ERROR);
+                    textAlert.setTitle("Error Dialog");
+                    textAlert.setHeaderText("Invalid Move");
+                    textAlert.setContentText("Wrong destination.");
+                    textAlert.showAndWait();
+                    return;
+                }
+            }
+        if (grid.grid[indexArray[0]][indexArray[1]] instanceof Pawn) {
+            ((Pawn) grid.grid[indexArray[0]][indexArray[1]]).firstMoveDone = true;
+        }
+        if (grid.grid[indexArray[2]][indexArray[3]] instanceof King) {
+            grid.grid[indexArray[2]][indexArray[3]] = new Empty();
+            grid.swap(indexArray[0], indexArray[1], indexArray[2], indexArray[3]);
+            if (to.getChildren().size() == 2) {
+                ImageView image = (ImageView) from.getChildren().remove(1);
+                to.getChildren().set(1, image);
+            }
+            Alert textAlert = new Alert(Alert.AlertType.INFORMATION);
+            textAlert.setTitle("Game Won");
+            textAlert.setHeaderText("Congratulations!");
+            textAlert.setContentText("You finally killed the opponent's king. You have won.");
+            textAlert.showAndWait();
+            return;
+        } else {
+            if (!(grid.grid[indexArray[2]][indexArray[3]] instanceof Empty)) {
+                grid.grid[indexArray[2]][indexArray[3]] = new Empty();
+            }
+            blackMove = !blackMove;
+            grid.swap(indexArray[0], indexArray[1], indexArray[2], indexArray[3]);
+            if (to.getChildren().size() == 2) {
+                ImageView image = (ImageView) from.getChildren().remove(1);
+                to.getChildren().set(1, image);
+            }
+            if (to.getChildren().size() == 1) {
+                ImageView image = (ImageView) from.getChildren().remove(1);
+                to.getChildren().add(image);
+            }
+        }
     }
 }

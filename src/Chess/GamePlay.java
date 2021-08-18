@@ -199,7 +199,7 @@ public class GamePlay {
      * @param grid  the current grid status.
      * @return the list of all totally legal moves of the selected piece.
      */
-    static List<List<int[]>> filterPawnMoves(int i, int j, List<List<int[]>> input, Grid grid) {
+    public static List<List<int[]>> filterPawnMoves(int i, int j, List<List<int[]>> input, Grid grid) {
         String color = grid.grid[i][j].getColor();
         if (((Pawn) grid.grid[i][j]).firstMoveDone) {
             if (!(grid.grid[input.get(0).get(0)[0]][input.get(0).get(0)[1]] instanceof Empty)) {
