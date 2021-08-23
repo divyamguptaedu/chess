@@ -1,13 +1,8 @@
 package Chess;
 
-import Chess.Piece.Bishop;
-import Chess.Piece.Empty;
-import Chess.Piece.King;
-import Chess.Piece.Knight;
-import Chess.Piece.Pawn;
-import Chess.Piece.Piece;
-import Chess.Piece.Queen;
-import Chess.Piece.Rook;
+import Chess.Piece.*;
+
+import java.util.HashMap;
 
 /**
  * This class represents the chess 8x8 grid.
@@ -19,12 +14,18 @@ class Grid {
      * The two-dimensional piece grid.
      */
     Piece[][] grid;
+    HashMap<Piece, int[]> blackPieces;
+    HashMap<Piece, int[]> whitePieces;
+    Piece blackKing;
+    Piece whiteKing;
 
     /**
      * Constructor method for grid object. Builds a default 8x8 grid.
      */
     Grid() {
         grid = new Piece[8][8];
+        blackPieces = new HashMap<>();
+        whitePieces = new HashMap<>();
         defaultGrid();
     }
 
@@ -33,16 +34,27 @@ class Grid {
      */
     void defaultGrid() {
         grid[0][0] = new Rook("White");
+        whitePieces.put(grid[0][0], new int[] {0, 0});
         grid[0][1] = new Knight("White");
+        whitePieces.put(grid[0][1], new int[] {0, 1});
         grid[0][2] = new Bishop("White");
+        whitePieces.put(grid[0][2], new int[] {0, 2});
         grid[0][3] = new Queen("White");
+        whitePieces.put(grid[0][3], new int[] {0, 3});
         grid[0][4] = new King("White");
+        whitePieces.put(grid[0][4], new int[] {0, 4});
+        whiteKing = grid[0][4];
         grid[0][5] = new Bishop("White");
+        whitePieces.put(grid[0][5], new int[] {0, 5});
         grid[0][6] = new Knight("White");
+        whitePieces.put(grid[0][6], new int[] {0, 6});
         grid[0][7] = new Rook("White");
+        whitePieces.put(grid[0][7], new int[] {0, 7});
+
         for (int i = 1; i < 2; i++) {
             for (int j = 0; j < 8; j++) {
                 grid[i][j] = new Pawn("White");
+                whitePieces.put(grid[i][j], new int[] {i, j});
             }
         }
         for (int i = 2; i < 6; i++) {
@@ -53,16 +65,27 @@ class Grid {
         for (int i = 6; i < 7; i++) {
             for (int j = 0; j < 8; j++) {
                 grid[i][j] = new Pawn("Black");
+                blackPieces.put(grid[i][j], new int[] {i, j});
             }
         }
         grid[7][0] = new Rook("Black");
+        blackPieces.put(grid[7][0], new int[] {7, 0});
         grid[7][1] = new Knight("Black");
+        blackPieces.put(grid[7][1], new int[] {7, 1});
         grid[7][2] = new Bishop("Black");
+        blackPieces.put(grid[7][2], new int[] {7, 2});
         grid[7][3] = new Queen("Black");
+        blackPieces.put(grid[7][3], new int[] {7, 3});
         grid[7][4] = new King("Black");
+        blackPieces.put(grid[7][4], new int[] {7, 4});
+        blackKing = grid[7][4];
         grid[7][5] = new Bishop("Black");
+        blackPieces.put(grid[7][5], new int[] {7, 5});
         grid[7][6] = new Knight("Black");
+        blackPieces.put(grid[7][6], new int[] {7, 6});
         grid[7][7] = new Rook("Black");
+        blackPieces.put(grid[7][7], new int[] {7, 7});
+
     }
 
     /**

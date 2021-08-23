@@ -2,6 +2,7 @@ package Chess;
 
 import Chess.Piece.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,6 +19,7 @@ public class GamePlay {
     }
     /**
      * This method runs the whole mechanism of creating, displaying, editing, and updating the grid.
+     * All happens in console. Not the GUI.
      */
     static void play() {
         Grid grid = new Grid();
@@ -264,4 +266,141 @@ public class GamePlay {
         }
         return result;
     }
+
+    static boolean isCheckMate(Grid grid) {
+        return anyBlackMovesLeft(grid) || anyWhiteMovesLeft(grid);
+    }
+
+    static boolean anyWhiteMovesLeft(Grid grid) {
+        HashMap<Piece, List<List<int[]>>> blackMovesSet = new HashMap<>();
+        for (Piece blackPiece : grid.blackPieces.keySet()) {
+            if (blackPiece instanceof Pawn) {
+                List<List<int[]>> temp = filterPawnMoves(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1], blackPiece.findMoves(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1]), grid);
+                blackMovesSet.put(blackPiece, temp);
+            }
+            if (blackPiece instanceof Bishop || blackPiece instanceof Rook || blackPiece instanceof Queen) {
+                List<List<int[]>> temp = limitTillEnemy(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1], blackPiece.findMoves(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1]), grid);
+                blackMovesSet.put(blackPiece, temp);
+            }
+            if (blackPiece instanceof King || blackPiece instanceof Knight) {
+                List<List<int[]>> temp = removeFriends(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1], blackPiece.findMoves(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1]), grid);
+                blackMovesSet.put(blackPiece, temp);
+            }
+        }
+
+        HashMap<Piece, List<List<int[]>>> whiteMovesSet = new HashMap<>();
+        for (Piece whitePiece : grid.blackPieces.keySet()) {
+            if (whitePiece instanceof Pawn) {
+                List<List<int[]>> temp = filterPawnMoves(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1], whitePiece.findMoves(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1]), grid);
+                whiteMovesSet.put(whitePiece, temp);
+            }
+            if (whitePiece instanceof Bishop || whitePiece instanceof Rook || whitePiece instanceof Queen) {
+                List<List<int[]>> temp = limitTillEnemy(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1], whitePiece.findMoves(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1]), grid);
+                whiteMovesSet.put(whitePiece, temp);
+            }
+            if (whitePiece instanceof King || whitePiece instanceof Knight) {
+                List<List<int[]>> temp = removeFriends(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1], whitePiece.findMoves(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1]), grid);
+                whiteMovesSet.put(whitePiece, temp);
+            }
+        }
+
+        int[] whiteKingLocation = grid.whitePieces.get(grid.whiteKing);
+        List<List<int[]>> whiteKingMoves = whiteMovesSet.get(grid.whiteKing);
+        List<Piece> killingPieces = new ArrayList<>();
+        boolean present = false;
+        for (Piece blackPiece : blackMovesSet.keySet()) {
+            if (contains(whiteKingLocation[0], whiteKingLocation[1], blackMovesSet.get(blackPiece))) {
+                present = true;
+                killingPieces.add(blackPiece);
+                break;
+            }
+        }
+        if (!present) {
+            return false;
+        } else {
+            for (List<int[]> list : whiteMovesSet.get(grid.whiteKing)) {
+                for (int[] moves : list) {
+                    present = false;
+                    for (Piece blackPiece : blackMovesSet.keySet()) {
+                        if (contains(moves[0], moves[1], blackMovesSet.get(blackPiece))) {
+                            present = true;
+                            killingPieces.add(blackPiece);
+                            break;
+                        }
+                    }
+                    if (!present) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    }
+
+    static boolean anyBlackMovesLeft(Grid grid) {
+        HashMap<Piece, List<List<int[]>>> blackMovesSet = new HashMap<>();
+        for (Piece blackPiece : grid.blackPieces.keySet()) {
+            if (blackPiece instanceof Pawn) {
+                List<List<int[]>> temp = filterPawnMoves(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1], blackPiece.findMoves(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1]), grid);
+                blackMovesSet.put(blackPiece, temp);
+            }
+            if (blackPiece instanceof Bishop || blackPiece instanceof Rook || blackPiece instanceof Queen) {
+                List<List<int[]>> temp = limitTillEnemy(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1], blackPiece.findMoves(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1]), grid);
+                blackMovesSet.put(blackPiece, temp);
+            }
+            if (blackPiece instanceof King || blackPiece instanceof Knight) {
+                List<List<int[]>> temp = removeFriends(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1], blackPiece.findMoves(grid.blackPieces.get(blackPiece)[0], grid.blackPieces.get(blackPiece)[1]), grid);
+                blackMovesSet.put(blackPiece, temp);
+            }
+        }
+
+        HashMap<Piece, List<List<int[]>>> whiteMovesSet = new HashMap<>();
+        for (Piece whitePiece : grid.blackPieces.keySet()) {
+            if (whitePiece instanceof Pawn) {
+                List<List<int[]>> temp = filterPawnMoves(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1], whitePiece.findMoves(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1]), grid);
+                whiteMovesSet.put(whitePiece, temp);
+            }
+            if (whitePiece instanceof Bishop || whitePiece instanceof Rook || whitePiece instanceof Queen) {
+                List<List<int[]>> temp = limitTillEnemy(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1], whitePiece.findMoves(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1]), grid);
+                whiteMovesSet.put(whitePiece, temp);
+            }
+            if (whitePiece instanceof King || whitePiece instanceof Knight) {
+                List<List<int[]>> temp = removeFriends(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1], whitePiece.findMoves(grid.blackPieces.get(whitePiece)[0], grid.blackPieces.get(whitePiece)[1]), grid);
+                whiteMovesSet.put(whitePiece, temp);
+            }
+        }
+
+        int[] blackKingLocation = grid.blackPieces.get(grid.blackKing);
+        List<List<int[]>> blackKingMoves = blackMovesSet.get(grid.blackKing);
+        List<Piece> killingPieces = new ArrayList<>();
+        boolean present = false;
+        for (Piece whitePiece : whiteMovesSet.keySet()) {
+            if (contains(blackKingLocation[0], blackKingLocation[1], whiteMovesSet.get(whitePiece))) {
+                present = true;
+                killingPieces.add(whitePiece);
+                break;
+            }
+        }
+        if (!present) {
+            return false;
+        } else {
+            for (List<int[]> list : blackMovesSet.get(grid.blackKing)) {
+                for (int[] moves : list) {
+                    present = false;
+                    for (Piece whitePiece : whiteMovesSet.keySet()) {
+                        if (contains(moves[0], moves[1], whiteMovesSet.get(whitePiece))) {
+                            present = true;
+                            killingPieces.add(whitePiece);
+                            break;
+                        }
+                    }
+                    if (!present) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    }
+
 }

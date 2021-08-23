@@ -1,16 +1,24 @@
 package Chess;
+
 import Chess.Piece.*;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import static Chess.GamePlay.*;
@@ -117,9 +125,54 @@ public class Interface extends Application {
                 processRequest(indexArray, gridPane, grid);
             }
         });
-        Scene scene = new Scene(gridPane, 600, 600);
+        Button checkforCheckMate = new Button();
+        checkforCheckMate.setText("Checkmate");
+        Font fontOne = Font.font("Helvetica", FontWeight.BOLD, 20);
+        checkforCheckMate.setFont(fontOne);
+        checkforCheckMate.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println(isCheckMate(grid));
+            }
+        });
+
+        Button exit = new Button();
+        exit.setText("Exit Game");
+        Font fontTwo = Font.font("Helvetica", FontWeight.BOLD, 20);
+        exit.setFont(fontTwo);
+        exit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.exit(0);
+            }
+        });
+        VBox vbox = new VBox();
+        HBox hbox = new HBox();
+        hbox.getChildren().addAll(checkforCheckMate, exit);
+        hbox.setAlignment(Pos.CENTER);
+        hbox.setSpacing(100);
+        vbox.getChildren().addAll(gridPane, hbox);
+        Scene sceneTwo = new Scene(vbox, 600, 639);
+        StackPane welcomeScreen = new StackPane();
+        Image chess = new Image("chess.jpeg");
+        ImageView chessBackground = new ImageView(chess);
+        chessBackground.setFitHeight(650);
+        chessBackground.setFitWidth(800);
+        Button startGame = new Button();
+        startGame.setText("Start Game");
+        Font fontThree = Font.font("Helvetica", FontWeight.BOLD, 36);
+        startGame.setFont(fontThree);
+        startGame.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(sceneTwo);
+                primaryStage.show();
+            }
+        });
+        welcomeScreen.getChildren().addAll(chessBackground, startGame);
+        Scene sceneOne = new Scene(welcomeScreen, 600, 639);
         primaryStage.setTitle("Chess");
-        primaryStage.setScene(scene);
+        primaryStage.setScene(sceneOne);
         primaryStage.show();
     }
 
@@ -212,6 +265,14 @@ public class Interface extends Application {
             ((Pawn) grid.grid[indexArray[0]][indexArray[1]]).firstMoveDone = true;
         }
         if (grid.grid[indexArray[2]][indexArray[3]] instanceof King) {
+            if (grid.grid[indexArray[2]][indexArray[3]].getColor().equals("Black")) {
+                grid.blackPieces.remove(grid.grid[indexArray[2]][indexArray[3]]);
+                grid.whitePieces.put(grid.grid[indexArray[0]][indexArray[1]], new int[] {indexArray[2], indexArray[3]});
+            }
+            if (grid.grid[indexArray[2]][indexArray[3]].getColor().equals("White")) {
+                grid.whitePieces.remove(grid.grid[indexArray[2]][indexArray[3]]);
+                grid.blackPieces.put(grid.grid[indexArray[0]][indexArray[1]], new int[] {indexArray[2], indexArray[3]});
+            }
             grid.grid[indexArray[2]][indexArray[3]] = new Empty();
             grid.swap(indexArray[0], indexArray[1], indexArray[2], indexArray[3]);
             if (to.getChildren().size() == 2) {
@@ -226,7 +287,22 @@ public class Interface extends Application {
             return;
         } else {
             if (!(grid.grid[indexArray[2]][indexArray[3]] instanceof Empty)) {
+                if (grid.grid[indexArray[2]][indexArray[3]].getColor().equals("Black")) {
+                    grid.blackPieces.remove(grid.grid[indexArray[2]][indexArray[3]]);
+                    grid.whitePieces.put(grid.grid[indexArray[0]][indexArray[1]], new int[] {indexArray[2], indexArray[3]});
+                }
+                if (grid.grid[indexArray[2]][indexArray[3]].getColor().equals("White")) {
+                    grid.whitePieces.remove(grid.grid[indexArray[2]][indexArray[3]]);
+                    grid.blackPieces.put(grid.grid[indexArray[0]][indexArray[1]], new int[] {indexArray[2], indexArray[3]});
+                }
                 grid.grid[indexArray[2]][indexArray[3]] = new Empty();
+            } else {
+                if (grid.grid[indexArray[0]][indexArray[1]].getColor().equals("Black")) {
+                    grid.blackPieces.put(grid.grid[indexArray[0]][indexArray[1]], new int[] {indexArray[2], indexArray[3]});
+                }
+                if (grid.grid[indexArray[0]][indexArray[1]].getColor().equals("White")) {
+                    grid.whitePieces.put(grid.grid[indexArray[0]][indexArray[1]], new int[] {indexArray[2], indexArray[3]});
+                }
             }
             blackMove = !blackMove;
             grid.swap(indexArray[0], indexArray[1], indexArray[2], indexArray[3]);
@@ -240,4 +316,5 @@ public class Interface extends Application {
             }
         }
     }
+
 }
