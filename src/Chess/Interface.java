@@ -132,7 +132,20 @@ public class Interface extends Application {
         checkforCheckMate.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.out.println(isCheckMate(grid));
+                if(isCheckMate(grid)) {
+                    Alert textAlert = new Alert(Alert.AlertType.INFORMATION);
+                    textAlert.setTitle("Checkmate");
+                    textAlert.setHeaderText("You did it!");
+                    textAlert.setContentText("The opponent has no move left to save the king. Congratulations!");
+                    textAlert.showAndWait();
+                    System.exit(0);
+                } else {
+                    Alert textAlert = new Alert(Alert.AlertType.INFORMATION);
+                    textAlert.setTitle("Checkmate");
+                    textAlert.setHeaderText("Think again!");
+                    textAlert.setContentText("The opponent still has a way to save the king.");
+                    textAlert.showAndWait();
+                }
             }
         });
 
@@ -284,7 +297,7 @@ public class Interface extends Application {
             textAlert.setHeaderText("Congratulations!");
             textAlert.setContentText("You finally killed the opponent's king. You have won.");
             textAlert.showAndWait();
-            return;
+            System.exit(0);
         } else {
             if (!(grid.grid[indexArray[2]][indexArray[3]] instanceof Empty)) {
                 if (grid.grid[indexArray[2]][indexArray[3]].getColor().equals("Black")) {

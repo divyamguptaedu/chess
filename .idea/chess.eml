@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_10" inheritJdk="true">
+	<output-test url="file:///test/chess"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="JUnit4" scope="TEST"/>
+	<levels>
+		<level name="lib" value="project"/>
+		<level name="legal" value="project"/>
+	</levels>
+</component>
