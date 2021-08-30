@@ -27,6 +27,10 @@ public class Interface extends Application {
 
     boolean blackMove = true;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) {
         Grid grid = new Grid();
@@ -132,20 +136,11 @@ public class Interface extends Application {
         checkforCheckMate.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(isCheckMate(grid)) {
-                    Alert textAlert = new Alert(Alert.AlertType.INFORMATION);
-                    textAlert.setTitle("Checkmate");
-                    textAlert.setHeaderText("You did it!");
-                    textAlert.setContentText("The opponent has no move left to save the king. Congratulations!");
-                    textAlert.showAndWait();
-                    System.exit(0);
-                } else {
                     Alert textAlert = new Alert(Alert.AlertType.INFORMATION);
                     textAlert.setTitle("Checkmate");
                     textAlert.setHeaderText("Think again!");
                     textAlert.setContentText("The opponent still has a way to save the king.");
                     textAlert.showAndWait();
-                }
             }
         });
 
